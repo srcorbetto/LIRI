@@ -16,16 +16,24 @@ var client = new Twitter(keys.twitter);
 
 
 // Test log
-console.log(keys.twitter.consumer_key);
-console.log(spotify);
-console.log(client);
+// console.log(keys.twitter.consumer_key);
+// console.log(spotify);
+// console.log(client);
 
 // console.log("Hello");
 
-client.post('statuses/update', {status: 'Node tweet 4'}, function(error, tweet, response) {
-  if (!error) {
-    console.log(tweet.text);
-    // console.log(response);
+// client.post('statuses/update', {status: 'Booyah!'}, function(error, tweet, response) {
+//   if (!error) {
+//     console.log(tweet.text);
+//     // console.log(response);
+//   }
+// });
+
+spotify.search({type: 'track', query: 'All the Small Things' }, function(err, data) {
+  if (err) {
+    return console.log('Error occurred: ' + err);
   }
+ 
+console.log(data.tracks.items[0].album.artists[0].name); 
 });
 
