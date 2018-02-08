@@ -102,6 +102,7 @@ function liri(command, optionalParam) {
 		request('http://www.omdbapi.com/?t=' + optionalParam + '&apikey=' + omdbKey, function (error, response, body) {
 		  if (error) {
 
+		  	// Need to add a fallback search if result comes back with no results
 		  	console.log(error);
 
 		  } else {
